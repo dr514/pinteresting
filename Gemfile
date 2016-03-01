@@ -1,4 +1,4 @@
-ruby '2.2.4'
+ruby '2.1.5'
 source 'https://rubygems.org'
 
 
@@ -21,6 +21,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
+gem 'devise', '~> 3.5.6'
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record

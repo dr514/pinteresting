@@ -1,6 +1,11 @@
 <div class="jumbotron">
   <h1><font color="white">Welcome!</font></h1>
-  <p><font color="white">sign up <%= link_to "Here", "www.google.ca", class: "btn btn-warning"%> or </font> <<%= link_to "Learn More", "#", class: "btn btn-info"%>
+  <%if user_signed_in? %>
+  # do something
+  <%else %>
+
+  	<p><font color="white">sign up <%= link_to "Here", new_user_registration_path, class: "btn btn-warning"%> or </font> <%= link_to "Sign In", new_user_session_path, class: "btn btn-info"%>
+  	<%end %>
 </div>
 
 <p>Find me in app/views/pages/home.html.erb</p>
