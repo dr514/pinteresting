@@ -1,4 +1,7 @@
-<%= form_for(@pin) do |f| %>
+<%= form_for @pin, html: { multipart: true } do |f| %>
+<style type="text/css">
+   body { background: azure  !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
   <% if @pin.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
@@ -10,14 +13,16 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, class: "form-control" %>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :string %><br>
-    <%= f.text_field :string %>
+    <%= f.text_field :string, class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit %>

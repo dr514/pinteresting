@@ -28,20 +28,13 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
         <li><%=link_to "Log out", destroy_user_session_path, method: :delete%></li>
-        <li><%=link_to "Edit Account", edit_user_registration_path %></li>
+        <li><%=link_to "Pins", pins_path %></li>
         
         <%else %>
                 <li><%=link_to "Sign In", new_user_session_path%></li>
 
         <%end%>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+        <li><%=link_to "Edit Acct", edit_user_registration_path %></li>
           </ul>
         </li>
 

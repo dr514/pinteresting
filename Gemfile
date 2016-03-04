@@ -22,7 +22,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.5.6'
-
+gem 'paperclip', github: 'thoughtbot/paperclip' #fix for error when trying to migrate paperclip image in console -dr
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
