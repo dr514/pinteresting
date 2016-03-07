@@ -78,4 +78,15 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'omr-drproject.herokuapp.com' }
   #required for heroku, need to be set to actual host of the application in production -dr
+
+  # config/environments/production.rb, added for aws-sdk-dr
+  #sets paperclip to upload images for Amazon S3
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  }
+}
 end
